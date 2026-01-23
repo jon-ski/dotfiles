@@ -1,0 +1,39 @@
+theme = "rose_pine"
+
+[editor]
+line-number = "relative"
+mouse = false
+rulers = [80]
+popup-border = "all"
+completion-timeout = 5
+completion-replace = true
+bufferline = "multiple"
+end-of-line-diagnostics = "hint"
+continue-comments = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+ignore = true
+git-ignore = false
+
+[editor.statusline]
+left = ["mode", "spinner", "spacer", "file-name"]
+# center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "|"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.indent-guides]
+render = true
+character = "┆"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "hint"

@@ -1,0 +1,13 @@
+[language-server.python-lsp]
+command = "pylsp"
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md", "--config", "C:\\Users\\Jonathan\\.dprint.json"]}
+
+[language-server.omnisharp]
+command = "D:/bin/omnisharp/OmniSharp.exe"
+args = ["-lsp", "--stdio"]
+
+[c-sharp]
+language-server = "omnisharp"
