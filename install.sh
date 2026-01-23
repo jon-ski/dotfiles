@@ -13,5 +13,6 @@ ln -sf "$REPO_DIR/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$REPO_DIR/bash/.bash_aliases" "$HOME/.bash_aliases"
 
 # Helix
+mkdir -p "$HOME/.config/helix"
 ln -sf "$REPO_DIR/helix/config.toml" "$HOME/.config/config.toml"
 ln -sf "$REPO_DIR/helix/languages.toml" "$HOME/.config/languages.toml"
