@@ -143,3 +143,9 @@ function y() {
   [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
+
+# Helix
+if command -v hx &>/dev/null; then
+  export EDITOR="hx"
+  export VISUAL="$EDITOR"
+fi
