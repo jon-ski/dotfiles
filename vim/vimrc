@@ -46,3 +46,6 @@ set smarttab
 set autoindent
 set smartindent
 
+" Clipboard
+set clipboard=unnamedplus
+
