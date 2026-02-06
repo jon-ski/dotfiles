@@ -133,9 +133,7 @@ fi
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # rust/cargo
-if [ -f "$HOME/.cargo/env" ]; then
-  . "$HOME/.cargo/env"
-fi
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # restic backup
 export RESTIC_REPOSITORY="/mnt/passport/restic"
