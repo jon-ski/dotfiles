@@ -126,7 +126,11 @@ eval "$(zoxide init bash)"
 
 # neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-. "$HOME/.cargo/env"
+
+# rust/cargo
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 # restic backup
 export RESTIC_REPOSITORY="/mnt/passport/restic"
