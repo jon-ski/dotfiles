@@ -20,3 +20,6 @@ ln -sf "$REPO_DIR/helix/languages.toml" "$HOME/.config/languages.toml"
 # Yazi
 mkdir -p "$HOME/.config/yazi"
 ln -sf "$REPO_DIR/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
+
+# Vim
+ln -sf "$REPO_DIR/vim/vimrc" "$HOME/.vimrc"
