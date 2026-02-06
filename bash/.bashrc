@@ -125,7 +125,9 @@ export PATH="/home/dev/.config/emacs/bin:$PATH"
 export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
 
 # zoxide
-eval "$(zoxide init bash)"
+if command_exists zoxide; then
+  eval "$(zoxide init bash)"
+fi
 
 # neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
