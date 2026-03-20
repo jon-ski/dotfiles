@@ -22,6 +22,9 @@ shopt -s cmdhist
 # ────────────────────────────────────────────
 
 shopt -s checkwinsize
+shopt -s globstar 2>/dev/null
+shopt -s autocd 2>/dev/null
+shopt -s cdspell
 
 # Colored prompt — covers kitty, alacritty, and standard 256-color terms
 case "$TERM" in
