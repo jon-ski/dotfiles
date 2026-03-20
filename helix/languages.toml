@@ -17,3 +17,11 @@ command = "gopls"
 args = ["-logfile=/tmp/gopls.log",  "serve"]
 [language-server.gopls.config]
 "ui.diagnostic.staticcheck" = true
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
