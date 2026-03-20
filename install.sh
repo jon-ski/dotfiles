@@ -23,3 +23,10 @@ ln -sf "$REPO_DIR/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
 
 # Vim
 ln -sf "$REPO_DIR/vim/vimrc" "$HOME/.vimrc"
+
+# emacs
+if command -v emacs &>/dev/null; then
+  mkdir -p ~/.emacs.d
+  ln -sf "$REPO_DIR/emacs/.emacs.d/early-init.el" "$HOME/.emacs.d/early-init.el"
+  ln -sf "$REPO_DIR/emacs/.emacs.d/init.el" "$HOME/.emacs.d/init.el"
+fi
