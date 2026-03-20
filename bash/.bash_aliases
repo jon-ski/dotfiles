@@ -4,6 +4,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lsl='ls -l'
 
+# Safety - prompt before destructive operations
+alias rm='rm -I'
+alias mv="mv -i'
+alias cp='cp -i'"
+
 # Clipboard helpers - auto-detect Wayland vs X11
 if [ "$XDG_SESSION_TYPE" = "wayland" ] && command -v wl-copy >/dev/null 2>&1; then
   alias clipset='wl-copy'
