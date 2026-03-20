@@ -93,8 +93,10 @@
 ;; Fido mode: lightweight fuzzy minibuffer completion (built-in)
 (use-package fido-vertical-mode
   :config
-  (fido-vertical-mode 1))
-
+  (fido-vertical-mode 1)
+  (setq icomplete-compute-delay 0)            ; show matches instantly
+  (setq icomplete-show-matches-on-no-input t) ; show options immediately on M-x
+  (setq completion-cycle-threshold 3))        ; cycle through if ≤3 matches
 ;;;; ---- Keybindings ----
 
 ;; Common org entry points
