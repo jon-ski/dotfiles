@@ -10,10 +10,12 @@ esac
 # History
 # ────────────────────────────────────────────
 
-HISTCONTROL=ignoreboth
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTCONTROL=ignoreboth:erasedups
+HISTSIZE=50000
+HISTFILESIZE=100000
+HISTTIMEFORMAT="%F %T  "
 shopt -s histappend
+shopt -s cmdhist
 
 # ────────────────────────────────────────────
 # Display / terminal
