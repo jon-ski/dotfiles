@@ -46,6 +46,10 @@ esac
 # Helper: check if a command is available
 command_exists() { command -v "$1" >/dev/null 2>&1; }
 
+# Helper: add to PATH without duplicates
+path_prepend() { case ":$PATH:" in *:"$1":*) ;; *) export PATH="$1:$PATH" ;; esac; }
+path_append()  { case ":$PATH:" in *:"$1":*) ;; *) export PATH="$PATH:$1" ;; esac; }
+
 # Export TTY for GPG
 export GPG_TTY=$(tty)
 
@@ -66,16 +70,20 @@ fi
 # ────────────────────────────────────────────
 
 # Local scripts and binaries
-export PATH="$HOME/.local/bin:$PATH"
+path_prepend "$HOME/.local/bin"
 
 # Doom Emacs (optional)
-[ -d "$HOME/.config/emacs/bin" ] && export PATH="$HOME/.config/emacs/bin:$PATH"
+[ -d "$HOME/.config/emacs/bin" ] && path_prepend "$HOME/.config/emacs/bin:$PATH"
 
 # Go
-[ -d "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
+[ -d "/usr/local/go/bin" ] && path_prepend "/usr/local/go/bin"
+command_exists go && path_prepend "$HOME/go/bin"
 
-# Neovim (manual install path)
-[ -d "/opt/nvim-linux-x86_64/bin" ] && export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+# Neovim (manual install path - matches any architecture)
+for _nvim_dir in /opt/nvim-linux-*/bin; do
+    [ -d "$_nvim_dir" ] && path_append "$_nvim_dir" && break
+done
+unset _nvim_dir
 
 # Rust / Cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -89,10 +97,8 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 # ────────────────────────────────────────────
 
-# fd — Ubuntu packages it as 'fdfind', Fedora as 'fd'
-if ! command_exists fd && command_exists fdfind; then
-    alias fd=fdfind
-fi
+# fd - Ubuntu packages the binary as 'fdfind'; alias to fd if needed
+command_exists fdfind && alias fd=fdfind
 
 # ────────────────────────────────────────────
 # Editor
