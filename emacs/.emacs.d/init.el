@@ -83,10 +83,12 @@
   (org-catch-invisible-edits 'smart) ; don't silently edit folded text
   (org-src-tab-acts-natively t)      ; indent code blocks properly
 
-  ;; Task management (light, for project.org files)
-  (org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE" "CANCELED")))
-  (org-log-done 'time)              ; timestamp when task completed
-  (org-enforce-todo-dependencies t)) ; can't close parent before children
+	;; Task management (light, for project.org files)
+	(org-todo-keywords
+		'((sequence "TODO(t)" "DOING(g)" "WAIT(w)" "|" "DONE(d)")
+		(sequence "|" "CANCELED(c)")))
+	(org-log-done 'time)              ; timestamp when task completed
+	(org-enforce-todo-dependencies t)) ; can't close parent before children
 
 ;;;; ---- Completion (built-in) ----
 
