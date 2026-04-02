@@ -64,7 +64,9 @@
 
   ;; Smoother scrolling
   (setq scroll-conservatively 101
-        scroll-margin 3))
+        scroll-margin 3)
+
+  (setq select-enable-clipboard t))
 
 ;;;; ---- Org mode ----
 
