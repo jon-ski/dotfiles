@@ -85,6 +85,13 @@
   (org-catch-invisible-edits 'smart) ; don't silently edit folded text
   (org-src-tab-acts-natively t)      ; indent code blocks properly
 
+  ;; Agenda
+  (org-agenda-prefix-format
+   '((agenda . " %i %-12:c%?-12t% s %b")
+     (todo . " %i %-12:c %b")
+     (tags . " %i %-12:c %b")
+     (search . "%i %-12:c %b")))
+
 	;; Task management (light, for project.org files)
 	(org-todo-keywords
 		'((sequence "TODO(t)" "DOING(g)" "WAIT(w)" "|" "DONE(d)")
